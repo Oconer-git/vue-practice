@@ -15,10 +15,14 @@ export default {
     data() {
         return {
             assignments: [
-                {name: 'Math', complete: false, id: 1},
-                {name: 'English', complete: false, id: 2},
-                {name: 'Science', complete: false, id: 3},
-                {name: 'Mapeh', complete: false, id: 4},
+                {name: 'Algebra 1', complete: false, id: 1, tag: 'Math' },
+                {name: 'Adj and Action Words', complete: false, id: 2, tag: 'English'},
+                {name: 'Dance video', complete: false, id: 3, tag: 'Mapeh'},
+                {name: 'Arts', complete: false, id: 4, tag: 'Mapeh'},
+                {name: 'Trigonometry', complete: false, id: 5, tag: 'Math'},
+                {name: 'Calculus', complete: false, id: 6, tag: 'Math'},
+                {name: 'Sports essay', complete: false, id: 7, tag: 'PE'},
+                {name: 'Sports video', complete: false, id: 8, tag: 'PE'},
             ],
         }
     },
