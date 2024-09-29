@@ -10,7 +10,10 @@ export default {
                 {{title}}
                 <span>({{assignments.length}})</span>
             </p>
-            <assignment-tags @change="current_tag = $event":initial-tags="assignments.map(a => a.tag)">  </assignment-tags>
+            <assignment-tags 
+                @change="current_tag = $event"
+                :initial-tags="assignments.map(a => a.tag)"
+                :current-tag = "current_tag"></assignment-tags>
             <ul class="text-lg border-2 border-gray-600 divide-y divide-gray-600">
                 <assignment v-for="assignment in filtered_assignments" class="text-center" :key="assignment.id" :assignment="assignment">
                 </assignment>
