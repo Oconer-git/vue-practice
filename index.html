@@ -8,21 +8,14 @@
   </head>
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
-  <body class="h-full grid place-items-center bg-gray-800 text-black">
-    <div id="app">
-      <input type="text" v-model="name">
-    </div>
+  <body class="h-full grid place-items-center bg-gray-800 text-white">
+    <div id="app"></div>
   </body>
 
 
   <script type="module">
     
-    Vue.createApp({
-      data() {
-        return {
-          name: ''
-        }
-      }
-    }).mount('#app');
+    import App from './js/components/App.js'
+    Vue.createApp(App).mount('#app');
   </script>
 </html>
