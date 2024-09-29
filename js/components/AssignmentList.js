@@ -1,7 +1,8 @@
-import assignment from "./Assignment.js";
+import Assignment from "./Assignment.js";
+import AssignmentTags from "./AssignmentTags.js";
 export default {
     components:{
-        assignment,
+        Assignment, AssignmentTags
     },
     template:`
         <section v-show="assignments.length" class="p-4">
@@ -9,11 +10,7 @@ export default {
                 {{title}}
                 <span>({{assignments.length}})</span>
             </p>
-            <div class="flex gap-2 mb-4">
-                <button @click="current_tag = tag" v-for="tag in tags" class="border rounded-md text-sm px-1 py"> 
-                    {{tag}}
-                </button>
-            </div>
+            <assignment-tags @change="current_tag = $event":initial-tags="assignments.map(a => a.tag)">  </assignment-tags>
             <ul class="text-lg border-2 border-gray-600 divide-y divide-gray-600">
                 <assignment v-for="assignment in filtered_assignments" class="text-center" :key="assignment.id" :assignment="assignment">
                 </assignment>
@@ -38,8 +35,5 @@ export default {
                 return this.assignments.filter(a => a.tag === this.current_tag)
             }
         },
-        tags() {
-            return ['all', ...new Set(this.assignments.map(a => a.tag))];
-        }
     }
 }
