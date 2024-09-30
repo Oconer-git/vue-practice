@@ -6,25 +6,31 @@ export default {
     },
 
     template: `
-        <section>
-            <assignment-list :assignments="filters.in_progress" title="In Progress"></assignment-list>
-            <assignment-list :assignments="filters.completed" title="Completed"></assignment-list>
-            <assignment-create @add="add"></assignment-create>
+        <section class="flex gap-2 p-2">
+            <assignment-list :assignments="filters.in_progress" title="In Progress">
+                <assignment-create @add="add"></assignment-create>
+            </assignment-list>
+            <assignment-list
+                v-if="show" 
+                :assignments="filters.completed" 
+                title="Completed" 
+                can-toggle
+                @toggle="show = !show">
+            </assignment-list>
         </section>
     `,
     data() {
         return {
-            assignments: [
-                {name: 'Algebra 1', complete: false, id: 1, tag: 'Math' },
-                {name: 'Adj and Action Words', complete: false, id: 2, tag: 'English'},
-                {name: 'Dance video', complete: false, id: 3, tag: 'Mapeh'},
-                {name: 'Arts', complete: false, id: 4, tag: 'Mapeh'},
-                {name: 'Trigonometry', complete: false, id: 5, tag: 'Math'},
-                {name: 'Calculus', complete: false, id: 6, tag: 'Math'},
-                {name: 'Sports essay', complete: false, id: 7, tag: 'PE'},
-                {name: 'Sports video', complete: false, id: 8, tag: 'PE'},
-            ],
+            assignments: [],
+            show: true
         }
+    },
+    created() {
+        fetch('http://localhost:3001/assignments')
+            .then( response => response.json())
+            .then( data => {
+               this.assignments = data;
+            })
     },
     computed: {
         filters() {

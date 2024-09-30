@@ -1,0 +1,46 @@
+{
+    "assignments": [
+        {
+            "name": "Adjective 1",
+            "complete": false,
+            "id": 1,
+            "tag": "english"
+        },
+        {
+            "name": "Adjective 2",
+            "complete": false,
+            "id": 2,
+            "tag": "english"
+        },
+        {
+            "name": "Algebra 1",
+            "complete": false,
+            "id": 3,
+            "tag": "math"
+        },
+        {
+            "name": "Trigonometry 1",
+            "complete": false,
+            "id": 4,
+            "tag": "math"
+        },
+        {
+            "name": "Calculus",
+            "complete": false,
+            "id": 5,
+            "tag": "math"
+        },
+        {
+            "name": "Dance video",
+            "complete": false,
+            "id": 6,
+            "tag": "PE"
+        },
+        {
+            "name": "painting",
+            "complete": false,
+            "id": 7,
+            "tag": "arts"
+        }
+    ]
+}
