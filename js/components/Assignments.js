@@ -7,12 +7,12 @@ export default {
 
     template: `
         <section class="flex gap-2 p-2">
-            <assignment-list :assignments="filters.in_progress" title="In Progress">
+            <assignment-list :assignments="filters.in_progress" title="In Progress" theme="light">
                 <assignment-create @add="add"></assignment-create>
             </assignment-list>
             <assignment-list
                 v-if="show" 
-                :assignments="filters.completed" 
+                :assignments="filters.completed " 
                 title="Completed" 
                 can-toggle
                 @toggle="show = !show">
